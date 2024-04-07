@@ -34,6 +34,7 @@ Esto lo hará antes de la ejecución del proyecto, en caso tal que no se encuent
 | ./project/data | Está para trabajar en el acceso y tranformación de data. |
 | ./project/projectConfig | Está para configurar la clonación automántica de las dependencias a ser utilizadas en el projecto. |
 | ./project/dependencies | Está para almacenar y llevar un control transparente de las dependencias de software externos usados en el proyecto, en especial, se agradece que sea software libre debidamente licenciado. |
+| ./project/extract | Está para configurar procesos de extracción de data. |
 | ./project/reports | Está para almacenar los reportes generados en PDF. |
 
 ## Ejemplo de uso:
@@ -67,6 +68,8 @@ de repositorios externos, sin la necesidad de alterar su código, por decirlo de
 | :----     | :---                     | :---                              |
 | fpdf2      | Permite la creación de PDFs | python -m pip install fpdf2       |
 | GitPython  | Facilita la clonación de repositorios externos  | python -m pip install GitPython       |
+| zeep      | Permite el acceso a SOAP | python -m pip install zeep        |
+| xmltodict | hace que trabajar con XML se sienta como si estuviera trabajando con JSON , | python -m pip install xmltodict   |
 
 > Con la instalación de la librería fpdf2 se instalarán las
 siguientes librerías de manera automática:
@@ -82,6 +85,24 @@ siguientes librerías de manera automática:
 <li>gitdb==4.0.11</li>
 <li>GitPython==3.1.43</li>
 <li>smmap==5.0.1</li>
+</ul>
+
+> Con la instalación de la librería zeep se instalarán las siguientes librerías de manera automática:
+<ul>
+<li>attrs==23.2.0</li>
+<li>certifi==2024.2.2</li>
+<li>charset-normalizer==3.3.2</li>
+<li>idna==3.6</li>
+<li>isodate==0.6.1</li>
+<li>lxml==5.2.1</li>
+<li>platformdirs==4.2.0</li>
+<li>pytz==2024.1</li>
+<li>requests==2.31.0</li>
+<li>requests-file==2.0.0</li>
+<li>requests-toolbelt==1.0.0</li>
+<li>six==1.16.0</li>
+<li>urllib3==2.2.1</li>
+<li>zeep==4.2.1</li>
 </ul>
 
 ---
