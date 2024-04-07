@@ -41,8 +41,9 @@ Esto lo hará antes de la ejecución del proyecto, en caso tal que no se encuent
 > En esta demo se ejecutaron exitosamente los códigos
 de repositorios externos, sin la necesidad de alterar su código, por decirlo de alguna manera, fueron usados como librerías:
 <ul>
-<li>python-fpdf2-pie-chart</li>
+<li>cliente-webservice-sipsa</li>
 <li>python-fpdf2-table</li>
+<li>python-fpdf2-pie-chart</li>
 </ul>
 
 ![alt text](image.png)
