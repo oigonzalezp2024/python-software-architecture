@@ -1,6 +1,7 @@
 from dependencies.flaskFlow.flaskFlow import FlaskFlow
 
 app = FlaskFlow(__name__)
+
 @app.route('/')
 def helloW(name=None):
     render = app.renderJson("promedioAbasSipsaMesMadr", "index.html", "./data/json/promedioAbasSipsaMesMadr.json")
