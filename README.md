@@ -61,7 +61,7 @@ de repositorios externos, sin la necesidad de alterar su código, por decirlo de
 | Paso 2 | Activar el entorno de trabajo.    | ./env/Scripts/activate              |
 | Paso 3 | Actualizar el gestor de paquetes. | python -m pip install --upgrade pip |
 | Paso 4 | Prepare la receta de librerías.   | pip install -r requirements.txt     |
-
+| Paso 5 | Ponga prueba todo.                | flask run --debug |
 ***
 
 ### Librerías del proyecto.
@@ -132,5 +132,5 @@ pip freeze > requirements.txt
 | Paso 4 | Active el entorno de trabajo.                 | ./env/Scripts/activate                |
 | Paso 5 | Actualice el gestor de paquetes.              | python -m pip install --upgrade pip   |
 | Paso 6 | Instale las librerías necesarias para operar. | pip install -r requirements.txt       |
-| Paso 7 | Realice pruebas de rutina.                    |  |
+| Paso 7 | Realice pruebas de rutina. | flask run --debug |
 | Paso 8 | Finalice su gestión.                          | deactivate                            |
