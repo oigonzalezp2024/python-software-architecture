@@ -8,6 +8,7 @@ from project.extract.promediosSipsaCiudad import pathFilec, wsdlc, serviceMethod
 from project.extract.promediosSipsaMesMadr import pathFiled, wsdld, serviceMethodd, arg0d, fieldsd
 from project.extract.promediosSipsaParcial import pathFilee, wsdle, serviceMethode, arg0e, fieldse
 from project.extract.promediosSipsaSemanaMadr import pathFilef, wsdlf, serviceMethodf, arg0f, fieldsf
+from project.transformData.TransformData import TransformData
 
 etl.controller(wsdla, serviceMethoda, arg0a, fieldsa, pathFilea)
 etl.controller(wsdlb, serviceMethodb, arg0b, fieldsb, pathFileb)
@@ -16,8 +17,12 @@ etl.controller(wsdld, serviceMethodd, arg0d, fieldsd, pathFiled)
 etl.controller(wsdle, serviceMethode, arg0e, fieldse, pathFilee)
 etl.controller(wsdlf, serviceMethodf, arg0f, fieldsf, pathFilef)
 
-pdf = EnterpriseCore()
+delimitedDataFlow = TransformData()
+delimitedDataFlow.delimitedDataToOneMonth()
+delimitedDataFlow.delimitedDataToQuarter()
+delimitedDataFlow.delimitedDataToSemester()
 
+pdf = EnterpriseCore()
 pdf.add_page()
 pdf.createTable(data1)
 pdf.multi_cell(w=5,h=15, text="")

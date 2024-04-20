@@ -35,6 +35,7 @@ Esto lo hará antes de la ejecución del proyecto, en caso tal que no se encuent
 | ./project/projectConfig | Está para configurar la clonación automántica de las dependencias a ser utilizadas en el projecto. |
 | ./project/dependencies | Está para almacenar y llevar un control transparente de las dependencias de software externos usados en el proyecto, en especial, se agradece que sea software libre debidamente licenciado. |
 | ./project/extract | Está para configurar procesos de extracción de data. |
+| ./project/transformData| Está para configurar procesos de transformación de data. |
 | ./project/reports | Está para almacenar los reportes generados en PDF. |
 
 ## Ejemplo de uso:
@@ -61,7 +62,8 @@ de repositorios externos, sin la necesidad de alterar su código, por decirlo de
 | Paso 2 | Activar el entorno de trabajo.    | ./env/Scripts/activate              |
 | Paso 3 | Actualizar el gestor de paquetes. | python -m pip install --upgrade pip |
 | Paso 4 | Prepare la receta de librerías.   | pip install -r requirements.txt     |
-| Paso 5 | Ponga prueba todo.                | flask run --debug |
+| Paso 5 | Corre la ETL. | py demo.py |
+| Paso 6 | Visualiza la información. | flask run --debug |
 ***
 
 ### Librerías del proyecto.
@@ -132,5 +134,6 @@ pip freeze > requirements.txt
 | Paso 4 | Active el entorno de trabajo.                 | ./env/Scripts/activate                |
 | Paso 5 | Actualice el gestor de paquetes.              | python -m pip install --upgrade pip   |
 | Paso 6 | Instale las librerías necesarias para operar. | pip install -r requirements.txt       |
-| Paso 7 | Realice pruebas de rutina. | flask run --debug |
-| Paso 8 | Finalice su gestión.                          | deactivate                            |
+| Paso 7 | Corre la ETL. | py demo.py |
+| Paso 8 | Visualiza la información. | flask run --debug |
+| Paso 9 | Finalice su gestión.                          | deactivate                            |
