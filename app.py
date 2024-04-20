@@ -15,7 +15,8 @@ delimitaConsulta = DelimitedData()
 
 @app.route('/')
 def helloW(name=None):
-    return "bienvenido."
+    render = app.renderJson("promedioAbasSipsaMesMadr", "index.html", "./project/data/oneMonth/json/promedioAbasSipsaMesMadr.json")
+    return render
 
 @app.route('/promedioAbasSipsaMesMadr')
 def promedioAbasSipsaMesMadr(name=None):
