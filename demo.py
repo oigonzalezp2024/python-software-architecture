@@ -36,4 +36,3 @@ pdf.add_page()
 pdf.dibujaGrafico(data5)
 
 pdf.output("./project/reports/enterpriseReport.pdf")
-pdf.end()
