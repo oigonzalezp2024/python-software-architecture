@@ -12,6 +12,14 @@ projectConfig = [
         'repo_dir' : './project/dependencies/delimitedData'
     },
     {
+        'git_url': 'https://github.com/oigonzalezp2024/transformData.git',
+        'repo_dir' : './project/dependencies/transformData'
+    },
+    {
+        'git_url': 'https://github.com/oigonzalezp2024/matplotDraw.git',
+        'repo_dir' : './project/dependencies/matplotDraw'
+    },
+    {
         'git_url': 'https://github.com/oigonzalezp2024/python-fpdf2-table.git',
         'repo_dir' : './project/dependencies/pythonFpdf2Table'
     },

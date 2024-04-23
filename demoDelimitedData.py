@@ -1,0 +1,7 @@
+import enterprise.enterpriceDependecies.enterpriceDependecies
+from project.delimitedDataByTime.delimitedDataByTime import DelimitedDataByTime
+
+delimitedDataFlow = DelimitedDataByTime()
+delimitedDataFlow.delimitedDataToOneMonth()
+delimitedDataFlow.delimitedDataToQuarter()
+delimitedDataFlow.delimitedDataToSemester()

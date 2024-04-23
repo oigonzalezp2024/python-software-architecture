@@ -1,7 +1,7 @@
 
 from project.dependencies.delimitedData.delimitedData import DelimitedData
 
-class TransformData(DelimitedData):
+class DelimitedDataByTime(DelimitedData):
 
     def delimitedDataToOneMonth(self):
         self.oneMonth("fechaMesIni", "./project/data/json/promedioAbasSipsaMesMadr.json", "./project/data/oneMonth/json/promedioAbasSipsaMesMadr.json")

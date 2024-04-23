@@ -1,0 +1,1 @@
+Aqui se guardarán los gráficos estadísticos.

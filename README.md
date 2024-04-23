@@ -1,13 +1,9 @@
 
----
-
 # Python Software Architecture
-
-***
 
 Esta es una propuesta de arquitectura de software en python, donde se facilita la actualización automática de dependencias que no se encuentren en gestores de paquetes de python, sino en repositorios remotos.
 
-El software clonará las versiones mas actualizadas de los repositorios establecidos como dependencias.
+El software clonará las versiones más actualizadas de los repositorios establecidos como dependencias.
 
 >"./project/projectConfig/projectConfig.py"  
 
@@ -15,7 +11,7 @@ y los reinstalará automaticamente en:
 
 > ./project/dependencies
 
-Esto lo hará antes de la ejecución del proyecto, en caso tal que no se encuentre incluido aun, para prevenir que se rompa.
+Esto lo hará antes de la ejecución del proyecto, en caso tal que no se encuentre incluido aún, para prevenir que se rompa.
 
 
 
@@ -38,22 +34,19 @@ Esto lo hará antes de la ejecución del proyecto, en caso tal que no se encuent
 | ./project/transformData| Está para configurar procesos de transformación de data. |
 | ./project/reports | Está para almacenar los reportes generados en PDF. |
 
-## Ejemplo de uso:
-> En esta demo se ejecutaron exitosamente los códigos
+## Modo de uso:
+En esta demo se ejecutaron exitosamente los códigos
 de repositorios externos, sin la necesidad de alterar su código, por decirlo de alguna manera, fueron usados como librerías:
-<ul>
-<li>cliente-webservice-sipsa</li>
-<li>python-fpdf2-table</li>
-<li>python-fpdf2-pie-chart</li>
-</ul>
 
-![alt text](image.png)
-
----
+| script             | comando | comando |
+| :----              | :--- | :--- |
+| demoClienteWebserviceSipsa.py | Accede a los datos de la Webservice de SIPSA - DANE. | demoClienteWebserviceSipsa.py |
+| demoDelimitedData.py | Delimita la data por periodos de tiempo para un posterior análisis. | py demoDelimitedData.py |
+| demoTransformData.py | Toma la data delimitada por periodos de tiempo, la trasforma de acuerdo al modelo de negocio y la guarda en: ./project/data/transformedData/json | py demoTransformData.py |
+| demoMatplotDraw.py | Toma la data transformada, la interpreta y genera gráficos de líneas para guardarlos en: ./project/data/transformedData/images | py demoMatplotDraw.py 
+| demoAll.py | Ejecuta todos los scripts en cola. | py demoAll.py |
 
 ## Documentación técnica
-
-***
 
 ### Configuración del entorno de desarrollo.
 | Paso   | Descripción                       | comando                             |
@@ -62,9 +55,8 @@ de repositorios externos, sin la necesidad de alterar su código, por decirlo de
 | Paso 2 | Activar el entorno de trabajo.    | ./env/Scripts/activate              |
 | Paso 3 | Actualizar el gestor de paquetes. | python -m pip install --upgrade pip |
 | Paso 4 | Prepare la receta de librerías.   | pip install -r requirements.txt     |
-| Paso 5 | Corre la ETL. | py demo.py |
+| Paso 5 | Ejecuta todos los scripts en cola. | py demoAll.py |
 | Paso 6 | Visualiza la información. | flask run --debug |
-***
 
 ### Librerías del proyecto.
 | librería  | Descripción              | Comando                           |
@@ -72,9 +64,9 @@ de repositorios externos, sin la necesidad de alterar su código, por decirlo de
 | fpdf2      | Permite la creación de PDFs | python -m pip install fpdf2       |
 | GitPython  | Facilita la clonación de repositorios externos  | python -m pip install GitPython       |
 | zeep      | Permite el acceso a SOAP | python -m pip install zeep        |
-| xmltodict | hace que trabajar con XML se sienta como si estuviera trabajando con JSON , | python -m pip install xmltodict   |
+| xmltodict | Hace que trabajar con XML se sienta como si estuviera trabajando con JSON , | python -m pip install xmltodict   |
 
-> Con la instalación de la librería fpdf2 se instalarán las
+Con la instalación de la librería fpdf2 se instalarán las
 siguientes librerías de manera automática:
 <ul>
 <li>defusedxml==0.7.1</li>
@@ -83,14 +75,14 @@ siguientes librerías de manera automática:
 <li>pillow==10.3.0</li>
 </ul>
 
-> Con la instalación de la librería GitPython se instalarán las siguientes librerías de manera automática:
+Con la instalación de la librería GitPython se instalarán las siguientes librerías de manera automática:
 <ul>
 <li>gitdb==4.0.11</li>
 <li>GitPython==3.1.43</li>
 <li>smmap==5.0.1</li>
 </ul>
 
-> Con la instalación de la librería zeep se instalarán las siguientes librerías de manera automática:
+Con la instalación de la librería zeep se instalarán las siguientes librerías de manera automática:
 <ul>
 <li>attrs==23.2.0</li>
 <li>certifi==2024.2.2</li>
@@ -108,22 +100,16 @@ siguientes librerías de manera automática:
 <li>zeep==4.2.1</li>
 </ul>
 
----
-
 ### Realice sus pruebas, actualizaciones o modificaciones.
-> Puedes actualizar, contribuir y mejorar el presente software, es libre. Licencia GNU v3.  
+Puedes actualizar, contribuir y mejorar el presente software, es libre. Licencia GNU v3.  
 No esta permitido modificar la licencia de trabajos derivados de este proyecto.  
 Por norma internacional debes conservar el mismo tipo de licencia.
 
 #### Actualizar la receta.
-
-> Si agregas nuevas librerías al proyecto, no olvides actualizar la receta.
-
+Si agregas nuevas librerías al proyecto, no olvides actualizar la receta.
 ``` CMD
 pip freeze > requirements.txt
 ```
-
----
 
 #### Comprobar que todo está en orden.
 | Paso   | Descripción                                   | comando                               |
@@ -134,6 +120,6 @@ pip freeze > requirements.txt
 | Paso 4 | Active el entorno de trabajo.                 | ./env/Scripts/activate                |
 | Paso 5 | Actualice el gestor de paquetes.              | python -m pip install --upgrade pip   |
 | Paso 6 | Instale las librerías necesarias para operar. | pip install -r requirements.txt       |
-| Paso 7 | Corre la ETL. | py demo.py |
+| Paso 7 | Ejecuta todos los scripts en cola. | py demoAll.py |
 | Paso 8 | Visualiza la información. | flask run --debug |
 | Paso 9 | Finalice su gestión.                          | deactivate                            |
