@@ -1,8 +1,10 @@
+import json
 import enterprise.enterpriceDependecies.enterpriceDependecies
 from enterprise.enterpriseCore.enterpriseCore import EnterpriseCore
 from enterprise.enterpriseFlaskFlow.EnterpriseFlaskFlow import EnterpriseFlaskFlow
 from project.dependencies.clienteWebserviceSipsa.etl import etl
 from project.dependencies.delimitedData.delimitedData import DelimitedData
+from project.dependencies.transformData.transformData import TransformData
 from project.extract.consultarInsumosSipsaMesMadr import pathFilea, wsdla, serviceMethoda, arg0a, fieldsa
 from project.extract.promedioAbasSipsaMesMadr import pathFileb, wsdlb, serviceMethodb, arg0b, fieldsb
 from project.extract.promediosSipsaCiudad import pathFilec, wsdlc, serviceMethodc, arg0c, fieldsc
@@ -13,6 +15,32 @@ from project.extract.promediosSipsaSemanaMadr import pathFilef, wsdlf, serviceMe
 app = EnterpriseFlaskFlow(__name__)
 delimitaConsulta = DelimitedData()
 
+class TransformDataPath(TransformData):
+
+    def businessLogic(self, data:object)->list:
+        casos = []
+        ciudades = []
+        for i in data:
+            ciudad = self.transMunicipio(str(i['ciudad']))
+            producto = self.transProducto(str(i['producto']))
+            caso = str("./static/images/")+str(ciudad+producto.capitalize())+str(".png")
+            if(ciudad not in ciudades):
+                rr = 2
+                for i in ciudades:
+                    if(i in ciudad):
+                        rr = 1
+                        break
+                    if(ciudad in i):
+                        rr = 1
+                        ciudad = i
+                        caso = str(ciudad+producto.capitalize())
+                        break
+                if(rr==2):
+                    ciudades.append(ciudad)
+            if(caso not in casos):
+                casos.append(caso)
+        return [{"image":casos}]
+    
 @app.route('/')
 def helloW(name=None):
     render = app.renderJson("promedioAbasSipsaMesMadr", "index.html", "./project/data/oneMonth/json/promedioAbasSipsaMesMadr.json")
@@ -85,3 +113,13 @@ def generaReporte(name=None):
     pdf = EnterpriseCore()
     pdf.end()
     return "Informes generados."
+
+@app.route('/ciudad')
+def ciudades(name=None):
+    ttt = TransformDataPath()
+    ttt.controller(
+        "./project/data/oneMonth/json/promediosSipsaCiudad.json",
+        "./project/data/transformedData/adminPath/pathsEnd.json",
+        )
+    render = app.renderJson("promediosSipsaSemanaMadr", "graficosLineas.html", "./project/data/transformedData/adminPath/pathsEnd.json")
+    return render

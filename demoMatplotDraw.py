@@ -5,3 +5,8 @@ matplotDraw1 = MatplotDraw()
 data = matplotDraw1.readFileJson("./project/data/transformedData/json/transformedData.json")
 matplotDraw1.pathEnd("./project/data/transformedData/images/")
 matplotDraw1.getLineCharts(data)
+
+matplotDraw1 = MatplotDraw()
+data = matplotDraw1.readFileJson("./project/data/transformedData/json/transformedData.json")
+matplotDraw1.pathEnd("./static/images")
+matplotDraw1.getLineCharts(data)

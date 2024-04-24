@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% if name %}
+  <title>{{ name }}</title>
+  {% else %}
+  <title>Proyecto en desarrollo</title>
+  {% endif %}
+  <link rel="stylesheet" href="./static/style.css">
+</head>
+
+<body>
+  <ul>
+    <li><a class="active" href="./promedioAbasSipsaMesMadr">Home</a></li>
+    <li><a href="./promedioAbasSipsaMesMadr">promedioAbasSipsaMesMadr</a></li>
+    <li><a href="./promediosSipsaCiudad">promediosSipsaCiudad</a></li>
+    <li><a href="./promediosSipsaMesMadr">promediosSipsaMesMadr</a></li>
+    <li><a href="./promediosSipsaParcial">promediosSipsaParcial</a></li>
+    <li><a href="./promediosSipsaSemanaMadr">promediosSipsaSemanaMadr</a></li>
+  </ul>  
+  {% if name %}
+  <h1>{{ name }}</h1>
+  {% else %}
+  <h1>Proyecto en desarrollo</h1>
+  {% endif %}
+  <table id="customers">
+    <thead>
+      <tr>
+        {%- for column in keys %}
+        <th>{{ column }}</th>
+        {%- endfor %}
+      </tr>
+    </thead>
+    <tbody>
+        {%- for values in data %}
+          {%- for value in values %}
+            {%- for item in value %}
+            <tr>
+              <td>{{ item }}</td>
+            </tr>
+            <tr>
+              <td>
+                <img class="chartLine" src='{{ item }}' alt="ssss">
+              </td>
+            </tr>
+            {%- endfor %}
+          {%- endfor %}
+        {%- endfor %}
+    </tbody>
+  </table>
+
+</body>
+
+</html>
