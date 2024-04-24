@@ -40,7 +40,7 @@ de repositorios externos, sin la necesidad de alterar su código, por decirlo de
 
 | script             | comando | comando |
 | :----              | :--- | :--- |
-| demoClienteWebserviceSipsa.py | Accede a los datos de la Webservice de SIPSA - DANE. | demoClienteWebserviceSipsa.py |
+| demoClienteWebserviceSipsa.py | Accede a los datos de la Webservice de SIPSA - DANE. | py demoClienteWebserviceSipsa.py |
 | demoDelimitedData.py | Delimita la data por periodos de tiempo para un posterior análisis. | py demoDelimitedData.py |
 | demoTransformData.py | Toma la data delimitada por periodos de tiempo, la trasforma de acuerdo al modelo de negocio y la guarda en: ./project/data/transformedData/json | py demoTransformData.py |
 | demoMatplotDraw.py | Toma la data transformada, la interpreta y genera gráficos de líneas para guardarlos en: ./project/data/transformedData/images | py demoMatplotDraw.py 
