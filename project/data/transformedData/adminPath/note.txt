@@ -1,0 +1,1 @@
+aqui se guardan las rutas de las imágenes, clasificadas por ciudad.
