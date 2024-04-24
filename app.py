@@ -114,12 +114,12 @@ def generaReporte(name=None):
     pdf.end()
     return "Informes generados."
 
-@app.route('/ciudad')
+@app.route('/graficosLineas')
 def ciudades(name=None):
     ttt = TransformDataPath()
     ttt.controller(
         "./project/data/oneMonth/json/promediosSipsaCiudad.json",
         "./project/data/transformedData/adminPath/pathsEnd.json",
         )
-    render = app.renderJson("promediosSipsaSemanaMadr", "graficosLineas.html", "./project/data/transformedData/adminPath/pathsEnd.json")
+    render = app.renderJson("promediosSipsaCiudad", "graficosLineas.html", "./project/data/transformedData/adminPath/pathsEnd.json")
     return render
