@@ -1,0 +1,1 @@
+Aquí se almacenarán las imágenes para mostrarlas por pantalla.
