@@ -43,32 +43,32 @@ class TransformDataPath(TransformData):
     
 @app.route('/')
 def helloW(name=None):
-    render = app.renderJson("promedioAbasSipsaMesMadr", "index.html", "./project/data/oneMonth/json/promedioAbasSipsaMesMadr.json")
+    render = app.renderJson("promedioAbasSipsaMesMadr", "index.html", "./project/data/quarter/json/promedioAbasSipsaMesMadr.json")
     return render
 
 @app.route('/promedioAbasSipsaMesMadr')
 def promedioAbasSipsaMesMadr(name=None):
-    render = app.renderJson("promedioAbasSipsaMesMadr", "index.html", "./project/data/oneMonth/json/promedioAbasSipsaMesMadr.json")
+    render = app.renderJson("promedioAbasSipsaMesMadr", "index.html", "./project/data/quarter/json/promedioAbasSipsaMesMadr.json")
     return render
 
 @app.route('/promediosSipsaCiudad')
 def promediosSipsaCiudad(name=None):
-    render = app.renderJson("promediosSipsaCiudad", "index.html", "./project/data/oneMonth/json/promediosSipsaCiudad.json")
+    render = app.renderJson("promediosSipsaCiudad", "index.html", "./project/data/quarter/json/promediosSipsaCiudad.json")
     return render
 
 @app.route('/promediosSipsaMesMadr')
 def promediosSipsaMesMadr(name=None):
-    render = app.renderJson("promediosSipsaMesMadr", "index.html", "./project/data/oneMonth/json/promediosSipsaMesMadr.json")
+    render = app.renderJson("promediosSipsaMesMadr", "index.html", "./project/data/quarter/json/promediosSipsaMesMadr.json")
     return render
 
 @app.route('/promediosSipsaParcial')
 def promediosSipsaParcial(name=None):
-    render = app.renderJson("promediosSipsaParcial", "index.html", "./project/data/oneMonth/json/promediosSipsaParcial.json")
+    render = app.renderJson("promediosSipsaParcial", "index.html", "./project/data/quarter/json/promediosSipsaParcial.json")
     return render
 
 @app.route('/promediosSipsaSemanaMadr')
 def promediosSipsaSemanaMadr(name=None):
-    render = app.renderJson("promediosSipsaSemanaMadr", "index.html", "./project/data/oneMonth/json/promediosSipsaSemanaMadr.json")
+    render = app.renderJson("promediosSipsaSemanaMadr", "index.html", "./project/data/quarter/json/promediosSipsaSemanaMadr.json")
     return render
 
 @app.route('/generaEtl')
