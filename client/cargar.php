@@ -21,11 +21,13 @@ function limpiarTexto($cadena, $mantenerGuionBajo = false) {
 
 function generaImagen($mapData) {
     $nombreReporte = $mapData['data']['reporte'];
-    $rutaFinal = '../static/images/expo/' . $nombreReporte . '.avif';
+    $rutaFinalavif = '../static/images/expo/' . $nombreReporte . '.avif';
+    $rutaFinalpng = '../static/images/expo/' . $nombreReporte . '.png';
     try {
         $generator = new ImageGenerator($mapData);
         $generator->render();
-        $generator->outputAvif($rutaFinal);
+        $generator->outputPng($rutaFinalpng);
+        $generator->outputAvif($rutaFinalavif);
         echo "✅ " . $nombreReporte . " procesado.<br>";
         unset($generator);
     } catch (Exception $e) {

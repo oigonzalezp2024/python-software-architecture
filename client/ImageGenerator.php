@@ -88,4 +88,9 @@ class ImageGenerator {
         imageavif($this->image, $filename, 75);
         imagedestroy($this->image);
     }
+
+    public function outputPng($filename = null) {
+        $result = imagepng($this->image, $filename, 8);
+        return $result;
+    }
 }
