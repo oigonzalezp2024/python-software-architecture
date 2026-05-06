@@ -1,0 +1,51 @@
+{
+    "canvas": { "width": 1080, "height": 1920 },
+    "data": {
+        "producto": "Pimentón",
+        "precio": "$4.653",
+        "ciudad": "Cúcuta",
+        "fecha": "2026/04/14"
+    },
+    "elements": [
+        { "type": "image", "path": "ciudad.png", "x": 0, "y": 0, "w": 1080, "h": 640 },
+        { "type": "image", "path": "precio.png", "x": 0, "y": 640, "w": 1080, "h": 640 },
+        { "type": "image", "path": "producto.png", "x": 0, "y": 1280, "w": 1080, "h": 640 },
+        {
+            "type": "text",
+            "content_key": "producto",
+            "prefix": "",
+            "x": 60, "y": 250,
+            "color": "#FFFFFF",
+            "size": 80,
+            "outline_color": "#000000",
+            "outline_thickness": 7
+        },
+        {
+            "type": "text",
+            "content_key": "ciudad",
+            "x": 60, "y": 380,
+            "color": "#FFFFFF",
+            "size": 76,
+            "outline_color": "#000000",
+            "outline_thickness": 7
+        },
+        {
+            "type": "text",
+            "content_key": "fecha",
+            "x": 60, "y": 500,
+            "color": "#FFFFFF",
+            "size": 76,
+            "outline_color": "#000000",
+            "outline_thickness": 7
+        },
+        {
+            "type": "text",
+            "content_key": "precio",
+            "x": 300, "y": 1500,
+            "color": "#FFFFFF",
+            "size": 180,
+            "outline_color": "#000000",
+            "outline_thickness": 7
+        }
+    ]
+}
