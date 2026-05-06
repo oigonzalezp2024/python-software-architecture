@@ -30,7 +30,7 @@ def generar_imagen(map_data):
 # --- PROCESO ---
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-ruta_base_json = os.path.join(BASE_DIR, 'client_web_py', 'data_map.json')
+ruta_base_json = os.path.join(BASE_DIR, 'frame_generator', 'data_map.json')
 ruta_sipsa_json = os.path.abspath(os.path.join(BASE_DIR, 'project', 'data', 'json', 'promediosSipsaCiudad.json'))
 
 try:
